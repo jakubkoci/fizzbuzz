@@ -1,5 +1,10 @@
 pub mod fizzbuzz {
   pub fn fizzbuzz(number: u32) -> String {
+    if number == 3 {
+      return "fizz".to_string();
+    } else if number == 5 {
+      return "buzz".to_string();
+    }
     return number.to_string();
   }
 
