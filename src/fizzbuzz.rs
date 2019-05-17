@@ -9,17 +9,22 @@ pub mod fizzbuzz {
   }
 
   #[test]
-  fn returns_number() {
+  fn with_1_returns_number() {
     assert_eq!(fizzbuzz(1), "1");
   }
 
   #[test]
-  fn returns_fizz() {
-    assert_eq!(fizzbuzz(3), "fizz");
+  fn with_2_returns_number() {
+    assert_eq!(fizzbuzz(2), "2");
   }
 
   #[test]
-  fn returns_buzz() {
+  fn with_3_returns_fizz() {
+    assert_eq!(fizzbuzz(3), "fizz");
+  }
+  
+  #[test]
+  fn with_5_returns_buzz() {
     assert_eq!(fizzbuzz(5), "buzz");
   }
 }
