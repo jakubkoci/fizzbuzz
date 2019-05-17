@@ -1,6 +1,6 @@
 pub mod fizzbuzz {
   pub fn fizzbuzz(number: u32) -> String {
-    if number == 3 {
+    if number % 3 == 0 {
       return "fizz".to_string();
     } else if number == 5 {
       return "buzz".to_string();
@@ -26,5 +26,10 @@ pub mod fizzbuzz {
   #[test]
   fn with_5_returns_buzz() {
     assert_eq!(fizzbuzz(5), "buzz");
+  }
+
+  #[test]
+  fn with_6_returns_fizz() {
+    assert_eq!(fizzbuzz(6), "fizz");
   }
 }
