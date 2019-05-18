@@ -1,21 +1,25 @@
 pub mod fizzbuzz {
   pub fn fizzbuzz(number: u32) -> String {
-    let mut result = String::new();
+    let is_divisible_by_3 = is_divisible_by(3, number);
+    let is_divisible_by_5 = is_divisible_by(5, number);
 
-    if number % 3 == 0 || number % 5 == 0 {
-      if number % 3 == 0 {
+    if is_divisible_by_3 || is_divisible_by_5 {
+      let mut result = String::new();
+      if is_divisible_by_3 {
         result.push_str("fizz");
       }
 
-      if number % 5 == 0 {
+      if is_divisible_by_5 {
         result.push_str("buzz");
       }
       return result;
     }
 
-    result.push_str(&number.to_string());
+    return number.to_string();
+  }
 
-    return result;
+  fn is_divisible_by(divider: u32, number: u32) -> bool {
+    return number % divider == 0;
   }
 
   #[test]
