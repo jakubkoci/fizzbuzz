@@ -1,11 +1,21 @@
 pub mod fizzbuzz {
   pub fn fizzbuzz(number: u32) -> String {
-    if number % 3 == 0 {
-      return "fizz".to_string();
-    } else if number % 5 == 0 {
-      return "buzz".to_string();
+    let mut result = String::new();
+
+    if number % 3 == 0 || number % 5 == 0 {
+      if number % 3 == 0 {
+        result.push_str("fizz");
+      }
+
+      if number % 5 == 0 {
+        result.push_str("buzz");
+      }
+      return result;
     }
-    return number.to_string();
+
+    result.push_str(&number.to_string());
+
+    return result;
   }
 
   #[test]
@@ -22,7 +32,7 @@ pub mod fizzbuzz {
   fn with_3_returns_fizz() {
     assert_eq!(fizzbuzz(3), "fizz");
   }
-  
+
   #[test]
   fn with_5_returns_buzz() {
     assert_eq!(fizzbuzz(5), "buzz");
@@ -36,5 +46,10 @@ pub mod fizzbuzz {
   #[test]
   fn with_10_returns_buzz() {
     assert_eq!(fizzbuzz(10), "buzz");
+  }
+
+  #[test]
+  fn with_15_returns_fizzbuzz() {
+    assert_eq!(fizzbuzz(15), "fizzbuzz");
   }
 }
