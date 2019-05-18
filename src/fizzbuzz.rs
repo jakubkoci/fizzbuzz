@@ -3,8 +3,9 @@ pub mod fizzbuzz {
     let is_divisible_by_3 = is_divisible_by(3, number);
     let is_divisible_by_5 = is_divisible_by(5, number);
 
+    let mut result = String::from(number.to_string());
     if is_divisible_by_3 || is_divisible_by_5 {
-      let mut result = String::new();
+      result = String::new();
       if is_divisible_by_3 {
         result.push_str("fizz");
       }
@@ -12,10 +13,9 @@ pub mod fizzbuzz {
       if is_divisible_by_5 {
         result.push_str("buzz");
       }
-      return result;
     }
 
-    return number.to_string();
+    return result;
   }
 
   fn is_divisible_by(divider: u32, number: u32) -> bool {
