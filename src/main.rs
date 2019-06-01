@@ -1,6 +1,7 @@
 fn main() {
-    fizzbuzz(1);
-    println!("Hello, world!");
+    for number in 1..=100 {
+        println!("{}", fizzbuzz(number));
+    }
 }
 
 fn fizzbuzz(number: u32) -> String {
